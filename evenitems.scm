@@ -12,5 +12,5 @@
 ; Returns a list of all items in the given list with even index, where indices start with zero.
 (define (evenitems l)
   (if (null? l) `()
-  (cons (car l) (evenitems (cdr (cdr l))))))
+  (cons (car l) (if (pair? (cdr l)) (evenitems (cddr l)) `() ))))
   
